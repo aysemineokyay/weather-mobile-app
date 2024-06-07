@@ -1,4 +1,11 @@
-import { StyleSheet, Text, TextInput, View, ScrollView } from "react-native";
+import {
+  StyleSheet,
+  Text,
+  TextInput,
+  View,
+  ScrollView,
+  Pressable,
+} from "react-native";
 import React from "react";
 import BackgroundGradient from "@/components/backgroundGradient/BackgroundGradient";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
@@ -32,14 +39,15 @@ const list = () => {
         >
           <View style={{ flexDirection: "row", alignItems: "center" }}>
             <Link href="/" asChild>
-              <Ionicons
-                name="chevron-back-sharp"
-                size={34}
-                color={"rgba(235,235,245,0.6)"}
-              />
+              <Pressable style={{ flexDirection: "row" }}>
+                <Ionicons
+                  name="chevron-back-sharp"
+                  size={34}
+                  color={"rgba(235,235,245,0.6)"}
+                />
+                <Text style={styles.titleText}>Weather</Text>
+              </Pressable>
             </Link>
-
-            <Text style={styles.titleText}>Weather</Text>
           </View>
           <Ionicons
             name="ellipsis-horizontal-circle"
